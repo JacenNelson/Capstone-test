@@ -1,5 +1,6 @@
 import Objects from '../pageobjects/MapLinksPageObjects.js'
 import Verify from '../pageobjects/Expects.js'
+import { browser } from '@wdio/globals'
 
 describe('Map Links test', () => {
     it('should use functions successfully', async () => {
@@ -21,9 +22,29 @@ describe('Map Links test', () => {
         await Verify.verifySearch4()
         await Objects.shopButton()
         await Verify.verifyStore()
-        await Objects.openMenu()
-        await Verify.verifyMenu()
+        await Objects.repeatedClick()
         await Objects.locateStore()
         await Verify.verifyLocator()
+        await browser.back
+        await Objects.openMenu()
+        await Verify.verifyMenu()
+        await Objects.clickCurbside()
+        await Verify.verifyCurbside()
+        await browser.back()
+        await Objects.openMenu()
+        await Objects.clickLocal()
+        await Verify.verifyLocalAd()
+        await browser.back()
+        await Objects.openMenu()
+        await Objects.clickWorkshop()
+        await Verify.verifyWorkshop()
+        await browser.back()
+        await Objects.openMenu()
+        await Objects.clickStoreName()
+        await Verify.verifyStorePage()
+        await browser.back()
+        await Objects.openMenu()
+        await Objects.closemenu()
+        await Verify.verifyCloseMenu()
     })
 })

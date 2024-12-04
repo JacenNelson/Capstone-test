@@ -61,5 +61,20 @@ class Verify extends Page {
     async verifyLocator() {
         expect(browser).toHaveUrl('https://www.homedepot.com/l/store-locator')
     }
+    async verifyCurbside() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/c/curbside_pickup')
+    }
+    async verifyLocalAd() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/c/localad')
+    }
+    async verifyWorkshop() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/workshops/')
+    }
+    async verifyStorePage() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/l/West-Jordan/UT/West-Jordan/84088/4410')
+    }
+    async verifyCloseMenu() {
+        expect(this.LocationMenu).not.toBeExisting()
+    }
 }
 export default new Verify();

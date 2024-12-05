@@ -1,6 +1,5 @@
 import Objects from '../pageobjects/MapLinksPageObjects.js'
 import Verify from '../pageobjects/Expects.js'
-import { browser } from '@wdio/globals'
 
 describe('Map Links test', () => {
     it('should use functions successfully', async () => {

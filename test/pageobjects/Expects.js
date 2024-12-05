@@ -76,5 +76,8 @@ class Verify extends Page {
     async verifyCloseMenu() {
         expect(this.LocationMenu).not.toBeExisting()
     }
+    async verifyHome() {
+        expect(browser).toHaveUrl('https://www.homedepot.com')
+    }
 }
 export default new Verify();

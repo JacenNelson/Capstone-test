@@ -79,5 +79,26 @@ class Verify extends Page {
     async verifyHome() {
         expect(browser).toHaveUrl('https://www.homedepot.com')
     }
+    async verifyCart() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/cart')
+    }
+    async verifyProduct() {
+        expect($('//button[text()="Add to Cart"]')).toBeExisting()
+    }
+    async verifyHardware() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/b/Hardware/N-5yc1vZc21m')
+    }
+    async verifySideMenu() {
+        expect($('div[class="sui-bg-primary sui-transition-opacity sui-ease-in-out sui-duration-300 sui-outline-none sui-fixed sui-w-full sui-rounded-t-lg sui-shadow-none sui-overflow-y-scroll lg:sui-relative lg:sui-h-full lg:sui-row-span-full lg:sui-col-span-5 lg:sui-rounded-base lg:sui-shadow-lg xl:sui-row-start-1 xl:sui-row-span-full xl:sui-col-span-4 xl:sui-rounded-base xl:sui-shadow-xl lg:sui-col-start-8 xl:sui-col-start-9"]')).toBeExisting()
+    }
+    async verifyCreditCard() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/c/credit-center')
+    }
+    async verifyShopRoom() {
+        expect($('//div[@class="sui-bg-primary sui-transition-opacity sui-ease-in-out sui-duration-300 sui-outline-none sui-fixed sui-w-full sui-rounded-t-lg sui-shadow-none sui-overflow-y-scroll lg:sui-relative lg:sui-h-full lg:sui-row-span-full lg:sui-col-span-5 lg:sui-rounded-base lg:sui-shadow-lg xl:sui-row-start-1 xl:sui-row-span-full xl:sui-col-span-4 xl:sui-rounded-base xl:sui-shadow-xl lg:sui-col-start-8 xl:sui-col-start-9"]/div[1]/div/div[2]/div/p')).toHaveText('Shop By Room')
+    }
+    async verifyBathroom() {
+        expect(browser).toHaveUrl('https://www.homedepot.com/room/bathroom')
+    }
 }
 export default new Verify();

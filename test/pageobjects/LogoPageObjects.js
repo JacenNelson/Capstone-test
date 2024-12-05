@@ -1,7 +1,10 @@
 import { $ } from '@wdio/globals'
-import Site from './Site.js'
+import Page from './Site.js'
 
-class Objects extends Site {
+class Objects extends Page {
+    get logo() {
+        return $('//a[@data-testid="header-thd-logo"]')
+    }
 }
 
 export default new Objects();

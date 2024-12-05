@@ -37,6 +37,7 @@ class Objects extends Page {
         return $('button[aria-label="drawer-close"]')
     }
     async openMenu() {
+        await $('html').waitForStable()
         await this.menuOpen.click()
     }
     async repeatedClick() {

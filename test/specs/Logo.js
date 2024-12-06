@@ -16,6 +16,8 @@ describe('Logo test', () => {
         await Verify.verifyHome()
         await Objects.hardware()
         await Verify.verifyHardware()
+        await Objects.logo()
+        await Verify.verifyHome
         await Objects.shopAll()
         await Verify.verifySideMenu()
         await Objects.room()

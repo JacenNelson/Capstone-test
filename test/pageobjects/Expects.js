@@ -100,5 +100,65 @@ class Verify extends Page {
     async verifyBathroom() {
         expect(browser).toHaveUrl('https://www.homedepot.com/room/bathroom')
     }
+    async verifyCategory1() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Holiday-Decorations/N-5yc1vZbd6e')
+    }
+    async verifyCategory2() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/c/Savings_Center')
+    }
+    async verifyCategory3() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Appliances/N-5yc1vZbv1w')
+    }
+    async verifyCategory4() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Bath/N-5yc1vZbzb3')
+    }
+    async verifyCategory5() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Window-Treatments/N-5yc1vZar4w')
+    }
+    async verifyCategory6() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Building-Materials/N-5yc1vZaqns')
+    }
+    async verifyCategory7() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Cleaning/N-5yc1vZbqsi')
+    }
+    async verifyCategory8() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Home-Decor/N-5yc1vZas6p?cm_sp=d-flyout-Decor_and_Furniture')
+    }
+    async verifyCategory9() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Electrical/N-5yc1vZarcd')
+    }
+    async verifyCategory10() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Flooring/N-5yc1vZaq7r')
+    }
+    async verifyCategory11() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Hardware/N-5yc1vZc21m')
+    }
+    async verifyCategory12() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Heating-Venting-Cooling/N-5yc1vZc4k8')
+    }
+    async verifyCategory13() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Kitchen/N-5yc1vZar4i')
+    }
+    async verifyCategory14() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Outdoors-Garden-Center/N-5yc1vZbx6k')
+    }
+    async verifyCategory15() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Lighting/N-5yc1vZbvn5')
+    }
+    async verifyCategory16() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Outdoors/N-5yc1vZbx82')
+    }
+    async verifyCategory17() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Paint/N-5yc1vZar2d')
+    }
+    async verifyCategory18() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Plumbing/N-5yc1vZbqew')
+    }
+    async verifyCategory19() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Storage-Organization/N-5yc1vZas7e')
+    }
+    async verifyCategory20() {
+        expect (browser).toHaveUrl('https://www.homedepot.com/b/Tools/N-5yc1vZc1xy')
+    }
 }
 export default new Verify();

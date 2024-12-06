@@ -21,7 +21,8 @@ class Objects extends Page {
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[11]').click()
     }
     async shopAll() {
-        await $('//div[@class="print:sui-contents sui-fixed sui-w-full sui-left-0 sui-bottom-0 sui-transition-[bottom] sui-duration-500 sui-border-solid sui-border-t-1 sui-border-primary lg:sui-static lg:sui-w-auto lg:sui-border-t-0 lg:sui-left-auto lg:sui-bottom-auto lg:sui-bg-inherit sui-bg-primary sui-text-primary [.header-out-of-view_&]:-sui-bottom-20"]/div/button[1]').click()
+        await $('//div[@class="print:sui-contents sui-fixed sui-w-full sui-left-0 sui-bottom-0 sui-transition-[bottom] sui-duration-500 sui-border-solid sui-border-t-1 sui-border-primary lg:sui-static lg:sui-w-auto lg:sui-border-t-0 lg:sui-left-auto lg:sui-bottom-auto lg:sui-bg-inherit sui-bg-primary sui-text-primary [.header-out-of-view_&]:-sui-bottom-20"]/div/button[1]').click({ duration:100 })
+        await $('//div[@class="print:sui-contents sui-fixed sui-w-full sui-left-0 sui-bottom-0 sui-transition-[bottom] sui-duration-500 sui-border-solid sui-border-t-1 sui-border-primary lg:sui-static lg:sui-w-auto lg:sui-border-t-0 lg:sui-left-auto lg:sui-bottom-auto lg:sui-bg-inherit sui-bg-primary sui-text-primary [.header-out-of-view_&]:-sui-bottom-20"]/div/button[1]').click
     }
     async room() {
         await $('//span[text()="Shop By Room"]').click()

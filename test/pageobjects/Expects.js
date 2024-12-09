@@ -160,5 +160,8 @@ class Verify extends Page {
     async verifyCategory20() {
         expect (browser).toHaveUrl('https://www.homedepot.com/b/Tools/N-5yc1vZc1xy')
     }
+    async verifyBing() {
+        expect (browser).toHaveUrl('https://www.bing.com/maps?cp=40.618122%7E-112.284393&lvl=10.0&FORM=BMLOGO')
+    }
 }
 export default new Verify();

@@ -1,7 +1,7 @@
 import { browser } from '@wdio/globals'
 
 export default class Page {
-    open () {
+    start () {
         return browser.url('https://www.homedepot.com/')
     }
 }

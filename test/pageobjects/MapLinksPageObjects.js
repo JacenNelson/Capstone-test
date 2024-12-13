@@ -1,8 +1,10 @@
 import { $ } from '@wdio/globals'
 import Page from './Site.js'
 import Verify from './Expects.js'
+import { expect } from '@wdio/globals'
+import { browser } from '@wdio/globals'
 
-class Objects extends Page {
+class Links extends Page {
     get menuOpen() {
         return $('//div[@class="sui-absolute sui-left-0 sui-right-0 sui-bottom-0 lg:sui-static lg:sui-w-auto print:sui-contents sui-hidden lg:sui-inline"]/div/button')
     }
@@ -47,19 +49,10 @@ class Objects extends Page {
             isVerified = await Verify.LocationMenu.isExisting();
         }
     }
-    async currentLocationClick() {
-        await this.useCurrentLocation.click()
-    }
-    async clickSearch() {
-        await this.searchBar.click()
-    }
     async typeSearch(search) {
         await this.searchBar.clearValue()
         await this.searchBar.addValue(search)
         await this.magnifyingGlass.click()
-    }
-    async shopButton() {
-        await this.shopThisStore.click()
     }
     async locateStore() {
         await this.storeLocator.click()
@@ -79,9 +72,59 @@ class Objects extends Page {
     async closemenu() {
         await this.closeBTN.click()
     }
-    open () {
-        return super.open('login')
+    testStart () {
+        return super.start('login')
+    }
+    async searchMenu() {
+        await this.testStart()
+        await this.menuOpen.click()
+        await expect(Verify.LocationMenu).toBeExisting()
+        await this.useCurrentLocation.click()
+        await expect(Verify.errorMessage).toBeExisting()
+        await this.searchBar.click()
+        await this.typeSearch(84096)
+        await expect(Verify.searchResult1).toBeExisting()
+        await this.typeSearch('Lehi')
+        if ($('//p[text()="Lehi, UT"]').isExisting()) {
+            await $('//p[text()="Lehi, UT"]').click()
+        }
+        await expect(Verify.searchResult2).toBeExisting()
+        await this.typeSearch('Florida')
+        if ($('//p[text()="Florida"]').isExisting()) {
+            await $('//p[text()="Florida"]').click()
+        }
+        await expect(Verify.searchResult3).toBeExisting()
+        await this.typeSearch(1111)
+        await expect(Verify.badSearch).toBeExisting()
+        await this.typeSearch(4410)
+        await expect(Verify.searchResult4).toBeExisting()
+        await this.shopThisStore.click()
+        await expect(Verify.storeName).toHaveText('West Jordan')
+    }
+    async menuLinks() {
+        await this.repeatedClick()
+        await this.storeLocator.click()
+        await expect(browser).toHaveUrl('https://www.homedepot.com/l/store-locator')
+        await this.repeatedClick()
+        await this.curbsideBTN.click()
+        await expect(browser).toHaveUrl('https://www.homedepot.com/c/curbside_pickup')
+        await this.repeatedClick()
+        await this.localAdBTN.click()
+        await expect(browser).toHaveUrl('https://www.homedepot.com/c/localad')
+        await this.repeatedClick()
+        await this.workshopBTN.click()
+        await expect(browser).toHaveUrl('https://www.homedepot.com/workshops/')
+        await this.repeatedClick()
+        await this.nameOfStore.click()
+        await expect(browser).toHaveUrl('https://www.homedepot.com/l/West-Jordan/UT/West-Jordan/84088/4410')
+        await this.repeatedClick()
+        await this.closeBTN.click()
+        await expect(Verify.LocationMenu).not.toBeExisting()
+    }
+    async fullMenuTest() {
+        await this.searchMenu()
+        await this.menuLinks()
     }
 }
 
-export default new Objects();
+export default new Links();

@@ -1,73 +1,76 @@
 import { $ } from '@wdio/globals'
 import Site from './Site.js'
+import Verify from '../pageobjects/Expects.js'
 
-class Objects extends Site {
-    open() {
-        return super.open('open')
+class CategoryLinks extends Site {
+    testStart() {
+        return super.start('open')
     }
-    async firstItem() {
+    get homeBtn() {
+        return $('//a[@data-testid="header-thd-logo"]')
+    }
+    async test() {
+        await this.testStart()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[1]').click()
-    }
-    async secondItem() {
+        await Verify.verifyCategory('Holiday')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[2]').click()
-    }
-    async thirdItem() {
+        await Verify.verifyCategory('Savings')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[3]').click()
-    }
-    async fourthItem() {
+        await Verify.verifyCategory('Appliances')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[4]').click()
-    }
-    async fifthItem() {
+        await Verify.verifyCategory('Bath')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[5]').click()
-    }
-    async sixthItem() {
+        await Verify.verifyCategory('Window')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[6]').click()
-    }
-    async seventhItem() {
+        await Verify.verifyCategory('Building')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[7]').click()
-    }
-    async eighthItem() {
+        await Verify.verifyCategory('Cleaning')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[8]').click()
-    }
-    async ninthItem() {
+        await Verify.verifyCategory('Home-Decor')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[9]').click()
-    }
-    async tenthItem() {
+        await Verify.verifyCategory('Electrical')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[10]').click()
-    }
-    async eleventhItem() {
+        await Verify.verifyCategory('Flooring')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[11]').click()
-    }
-    async twelfthItem() {
+        await Verify.verifyCategory('Hardware')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[12]').click()
-    }
-    async thirteenthItem() {
+        await Verify.verifyCategory('Heating')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[13]').click()
-    }
-    async fourteenthItem() {
+        await Verify.verifyCategory('Kitchen')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[14]').click()
-    }
-    async fifteenthItem() {
+        await Verify.verifyCategory('Garden')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[15]').click()
-    }
-    async sixteenthItem() {
+        await Verify.verifyCategory('Lighting')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[16]').click()
-    }
-    async seventeenthItem() {
+        await Verify.verifyCategory('Outdoors')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[17]').click()
-    }
-    async eighteenthItem() {
+        await Verify.verifyCategory('Paint')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[18]').click()
-    }
-    async nineteenthItem() {
+        await Verify.verifyCategory('Plumbing')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[19]').click()
-    }
-    async twentiethItem() {
+        await Verify.verifyCategory('Storage')
+        await this.homeBtn.click()
         await $('//div[@class="sui-grid sui-grid-cols-1 sm:sui-grid-cols-3 lg:sui-grid-cols-5 sui-gap-4 sui-mt-5"]/div[20]').click()
-    }
-    async homeBtn() {
-        await $('//a[@data-testid="header-thd-logo"]').click()
+        await Verify.verifyCategory('Tools')
     }
 }
 
-export default new Objects();
+export default new CategoryLinks();

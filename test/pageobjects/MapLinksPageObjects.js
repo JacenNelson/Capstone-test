@@ -54,24 +54,6 @@ class Links extends Page {
         await this.searchBar.addValue(search)
         await this.magnifyingGlass.click()
     }
-    async locateStore() {
-        await this.storeLocator.click()
-    }
-    async clickCurbside() {
-        await this.curbsideBTN.click()
-    }
-    async clickLocal() {
-        await this.localAdBTN.click()
-    }
-    async clickWorkshop() {
-        await this.workshopBTN.click()
-    }
-    async clickStoreName() {
-        await this.nameOfStore.click()
-    }
-    async closemenu() {
-        await this.closeBTN.click()
-    }
     testStart () {
         return super.start('login')
     }
